@@ -72,7 +72,7 @@ export interface IDatabasesPanel {
   /**
    * Get a database from its alias.
    */
-  get_database(alias: string): Database | undefined;
+  get_database(alias: string | undefined): Database | undefined;
   /**
    * The databases list.
    */
@@ -115,7 +115,7 @@ export class DatabasesPanel extends SidePanel implements IDatabasesPanel {
   /**
    * Get a database from its alias.
    */
-  get_database(alias: string): Database | undefined {
+  get_database(alias: string | undefined): Database | undefined {
     return this._databases.find(db => db.alias === alias);
   }
   /**
